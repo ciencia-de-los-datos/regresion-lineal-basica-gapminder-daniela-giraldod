@@ -14,30 +14,34 @@ def pregunta_01():
     En este punto se realiza la lectura de conjuntos de datos.
     Complete el código presentado a continuación.
     """
+        
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
-    df = ____
-
+    
+    df = pd.read_csv("gm_2008_region.csv")
+    
     # Asigne la columna "life" a `y` y la columna "fertility" a `X`
-    y = ____[____].____
-    X = ____[____].____
+    y = df["life"]
+    x = df["fertility"]
 
     # Imprima las dimensiones de `y`
-    print(____.____)
+    print(y.shape) 
 
     # Imprima las dimensiones de `X`
-    print(____.____)
+    print(x.shape) 
 
     # Transforme `y` a un array de numpy usando reshape
-    y_reshaped = y.reshape(____, ____)
+    y = np.array(y)
+    y_reshaped = y.reshape(len(y),1)
 
     # Trasforme `X` a un array de numpy usando reshape
-    X_reshaped = X.reshape(____, ____)
+    x = np.array(x)
+    X_reshaped = x.reshape(len(x),1)
 
     # Imprima las nuevas dimensiones de `y`
-    print(____.____)
+    print(y_reshaped.shape)
 
     # Imprima las nuevas dimensiones de `X`
-    print(____.____)
+    print(X_reshaped.shape)
 
 
 def pregunta_02():
